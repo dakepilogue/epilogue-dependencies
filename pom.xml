@@ -9,6 +9,10 @@
   <version>1.0.0</version>
   <packaging>pom</packaging>
 
+  <name>emotibot-dependencies</name>
+  <description>common dependencies for emotibot project</description>
+  <url>https://gitlab.emotibot.com/mengzhenzhang/emotibot-dependencies</url>
+
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
