@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.emotibot</groupId>
+  <artifactId>emotibot-dependencies</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.version>3.7.0</maven.compiler.version>
+    <maven.source.version>3.0.1</maven.source.version>
+
+    <checkstyle.version>3.1.1</checkstyle.version>
+    <checkstyle.config>
+      https://gitlab.emotibot.com/mengzhenzhang/common-source/raw/master/google_checks.xml
+    </checkstyle.config>
+    <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
+    <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+
+    <mybatis-plus.version>3.3.2</mybatis-plus.version>
+    <pagehelper.version>1.2.12</pagehelper.version>
+    <lombok.version>1.18.12</lombok.version>
+    <slf4j.version>1.7.30</slf4j.version>
+    <guava.version>29.0-jre</guava.version>
+    <gson.version>2.8.6</gson.version>
+    <commons-collections.version>4.4</commons-collections.version>
+    <commons-beanutils.version>1.9.4</commons-beanutils.version>
+    <commons-lang3.version>3.9</commons-lang3.version>
+    <openfeign.version>10.9</openfeign.version>
+    <emotibot.mybatis-plus.version>1.0.0</emotibot.mybatis-plus.version>
+    <emotibot.spring-boot.version>1.0.0</emotibot.spring-boot.version>
+    <emotibot.spring-cloud.version>1.0.0</emotibot.spring-cloud.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+
+      <dependency>
+        <artifactId>guava</artifactId>
+        <groupId>com.google.guava</groupId>
+        <version>${guava.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>${gson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${commons-lang3.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-beanutils</groupId>
+        <artifactId>commons-beanutils</artifactId>
+        <version>${commons-beanutils.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-collections4</artifactId>
+        <version>${commons-collections.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.version}</version>
+        <configuration>
+          <source>${maven.compiler.target}</source>
+          <target>${maven.compiler.target}</target>
+          <encoding>utf-8</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>${maven.source.version}</version>
+        <configuration>
+          <attach>true</attach>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>${checkstyle.version}</version>
+
+        <configuration>
+          <!-- Here is the custom specification file address, and the config directory is parallel to the Pom.xml -->
+          <encoding>UTF-8</encoding>
+          <configLocation>${checkstyle.config}</configLocation>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
+        </configuration>
+        <executions>
+          <execution>
+            <id>checkstyle</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <failOnViolation>true</failOnViolation>
+              <failsOnError>true</failsOnError>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+
+</project>
