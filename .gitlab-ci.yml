@@ -13,7 +13,7 @@ check_dockerfile:
   after_script:
     - echo "check dockerfile finished !"
   tags:
-    - for all modules
+    - emotibot-dependencies
   allow_failure: true
 
 build_dockerfile:
@@ -26,5 +26,5 @@ build_dockerfile:
   after_script:
     - echo "deployment finished"
   tags:
-    - for all modules
+    - emotibot-dependencies
   allow_failure: true
