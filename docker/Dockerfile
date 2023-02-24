@@ -1,9 +1,9 @@
-FROM harbor.emotibot.com/bfop/emotibot-maven-deploy:3-jdk-8
+FROM dakepilogue/maven:3.6.3-jdk-8-slim
 
-MAINTAINER mengzhenzhang@emotibot.com
+MAINTAINER zmz8323802@163.com
 # Step : package jar
 WORKDIR /app
-COPY ./ ./
+COPY ./pom.xml ./
 
 # Step : deploy jar
 RUN mvn clean deploy -DskipTests

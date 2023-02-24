@@ -4,14 +4,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.emotibot</groupId>
-  <artifactId>emotibot-dependencies</artifactId>
+  <groupId>com.epilogue</groupId>
+  <artifactId>epilogue-dependencies</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
 
-  <name>emotibot-dependencies</name>
-  <description>common dependencies for emotibot project</description>
-  <url>https://gitlab.emotibot.com/mengzhenzhang/emotibot-dependencies</url>
+  <name>epilogue-dependencies</name>
+  <description>common dependencies for epilogue project</description>
 
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -21,7 +20,7 @@
 
     <checkstyle.version>3.1.1</checkstyle.version>
     <checkstyle.config>
-      https://gitlab.emotibot.com/mengzhenzhang/common-source/raw/master/google_checks.xml
+      https://gitee.com/dakepilogue/common-source/raw/master/google_checks.xml
     </checkstyle.config>
     <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
     <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
@@ -36,9 +35,6 @@
     <commons-beanutils.version>1.9.4</commons-beanutils.version>
     <commons-lang3.version>3.9</commons-lang3.version>
     <openfeign.version>10.9</openfeign.version>
-    <emotibot.mybatis-plus.version>1.0.0</emotibot.mybatis-plus.version>
-    <emotibot.spring-boot.version>1.0.0</emotibot.spring-boot.version>
-    <emotibot.spring-cloud.version>1.0.0</emotibot.spring-cloud.version>
   </properties>
 
   <dependencyManagement>
@@ -85,31 +81,37 @@
 
   <distributionManagement>
     <repository>
-      <id>central</id>
-      <name>dfebc32ff717-releases</name>
-      <url>http://docker-reg.emotibot.com.cn:8081/artifactory/libs-release-local</url>
+      <id>rdc-releases</id>
+      <name>rdc-releases</name>
+      <url>https://packages.aliyun.com/maven/repository/2314853-release-pOauLb</url>
     </repository>
     <snapshotRepository>
-      <id>snapshots</id>
-      <name>dfebc32ff717-snapshots</name>
-      <url>http://docker-reg.emotibot.com.cn:8081/artifactory/libs-snapshot-local</url>
+      <id>rdc-snapshots</id>
+      <name>rdc-snapshots</name>
+      <url>https://packages.aliyun.com/maven/repository/2314853-snapshot-5bgKBb</url>
     </snapshotRepository>
   </distributionManagement>
 
   <repositories>
     <repository>
-      <id>EmotibotRepoSnapshot</id>
-      <url>http://docker-reg.emotibot.com.cn:8081/artifactory/libs-snapshot-local</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>EmotibotRepoRelease</id>
-      <url>http://docker-reg.emotibot.com.cn:8081/artifactory/libs-release-local</url>
+      <id>rdc-releases</id>
+      <url>https://packages.aliyun.com/maven/repository/2314853-release-pOauLb/</url>
       <releases>
         <enabled>true</enabled>
       </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>rdc-snapshots</id>
+      <url>https://packages.aliyun.com/maven/repository/2314853-snapshot-5bgKBb/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
     </repository>
   </repositories>
 

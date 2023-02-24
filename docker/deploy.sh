@@ -7,8 +7,8 @@ cd $BUILDROOT
 GIT_HEAD="$(git rev-parse --short=7 HEAD)"
 GIT_DATE=$(git log HEAD -n1 --pretty='format:%cd' --date=format:'%Y%m%d-%H%M')
 
-REPO="harbor.emotibot.com/bfop"
-CONTAINER="emotibot-dependencies"
+REPO="dakepilogue"
+CONTAINER="epilogue-dependencies"
 TAG="${GIT_HEAD}-${GIT_DATE}"
 
 IMAGE_NAME="${REPO}/${CONTAINER}:${TAG}"
